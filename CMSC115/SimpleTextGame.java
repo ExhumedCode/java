@@ -32,10 +32,23 @@ public class SimpleTextGame {
 
         System.out.println("[1] Fight\n");
         System.out.println("[2] Flee\n");
-        System.out.print("Enter your choice (Enter 1 or 2): ");
-        int choice = input.nextInt();
 
-        // Multi-way if statement: Used to handle multiple distinct choices
+        int choice = 0;
+        while (true) {
+            System.out.print("Enter your choice (Enter 1 or 2): ");
+            if (input.hasNextInt()) {
+                choice = input.nextInt();
+                if (choice == 1 || choice == 2) {
+                    break;
+                } else {
+                    System.out.println("Invalid choice! Please enter 1 or 2.");
+                }
+            } else {
+                System.out.println("Invalid input! Please enter a number.");
+                input.next();
+            }
+        }
+
         if (choice == 1) {
             System.out.println(
                     "With a rush of adrenaline, you charge at the dragon with your sword and slash at its legs, causing it to stagger back, creating some distance between you and the dragon.\n");
@@ -46,19 +59,31 @@ public class SimpleTextGame {
             System.out.println("[1] Fire Blast\n");
             System.out.println("[2] Lightning Strike\n");
             System.out.println("[3] Blizzard\n");
-            System.out.print("Enter your spell choice: ");
-            int spellChoice = input.nextInt();
+
+            int spellChoice = 0;
+            while (true) {
+                System.out.print("Enter your spell choice: ");
+                if (input.hasNextInt()) {
+                    spellChoice = input.nextInt();
+                    if (spellChoice >= 1 && spellChoice <= 3) {
+                        break;
+                    } else {
+                        System.out.println("Invalid spell choice! Please enter a number between 1 and 3.");
+                    }
+                } else {
+                    System.out.println("Invalid input! Please enter a number.");
+                    input.next();
+                }
+            }
 
             boolean proceed = true;
 
-            // Switch statement: Used for a single variable with multiple possible values
             switch (spellChoice) {
                 case 1:
                     System.out.println(
                             "As you prepare to unleash a fiery barrage at your foe... you feel that you cannot gather the necessary fire essence as easily as you normally would...\n");
                     System.out.print("Do you wish to proceed with Fire Blast? (yes/no): ");
                     String fireDecision = input.next();
-                    // Nested if statement: Used for decision-making within a specific case
                     if (!fireDecision.toLowerCase().equals("yes")) {
                         proceed = false;
                     }
@@ -140,8 +165,6 @@ public class SimpleTextGame {
             System.out.println(
                     "You turn and run as fast as you can, but the dragon breathes fire on you, burning you to a crisp.\n");
             System.out.println("GAME OVER - You cannot escape the dragon's wrath!\n");
-        } else {
-            System.out.println("Invalid choice! Please restart the game and choose a valid option.\n");
         }
     }
 }
