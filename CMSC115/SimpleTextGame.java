@@ -34,6 +34,7 @@ public class SimpleTextGame {
         System.out.println("[2] Flee\n");
 
         int choice = 0;
+        // Nested if statement within while loop to handle invalid input
         while (true) {
             System.out.print("Enter your choice (Enter 1 or 2): ");
             if (input.hasNextInt()) {

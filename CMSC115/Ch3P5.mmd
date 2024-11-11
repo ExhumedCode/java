@@ -1,0 +1,9 @@
+flowchart TD
+    A[Start] --> B[/Enter a point with two coordinates/]
+    B --> C[Read x and y]
+    C --> D[Calculate isInRectangle]
+    D --> E{Is point inside rectangle}
+    E -->|Yes| F[Display point is in the rectangle]
+    E -->|No| G[Display point is not in the rectangle]
+    F --> H[End]
+    G --> H[End]
