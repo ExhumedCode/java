@@ -1,0 +1,22 @@
+flowchart TD
+    A([START]) --> B[/Prompt user for SSN/]
+    B --> C[/Get SSN input/]
+    
+    C --> D{Length = 11?}
+    D -->|No| F[Set isValid to false]
+    D -->|Yes| E{Hyphens at positions 4 & 7?}
+    
+    E -->|No| F
+    E -->|Yes| G{All other positions are digits?}
+    
+    G -->|No| F
+    G -->|Yes| H[Set isValid to true]
+    
+    F --> I{isValid?}
+    H --> I
+    
+    I -->|Yes| J[/Display SSN is valid/]
+    I -->|No| K[/Display SSN is invalid/]
+    
+    J --> L([END])
+    K --> L

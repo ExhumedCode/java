@@ -16,7 +16,7 @@ public class Ch4P1 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        System.out.print("Enter the number of sided: ");
+        System.out.print("Enter the number of sides: ");
         int n = input.nextInt();
 
         System.out.print("Enter the length of a side: ");

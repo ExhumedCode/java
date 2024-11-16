@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id=":Topics-Calling_methods-Converting_an_integer_into_a_double_by_division" external.linked.project.path="$MODULE_DIR$/../../../../../Topics/Calling methods/Converting an integer into a double by division" external.root.project.path="$MODULE_DIR$/../../../../.." external.system.id="GRADLE" external.system.module.group="Simple Tic-Tac-Toe (Java)" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../../../../Topics/Calling methods/Converting an integer into a double by division">
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/Calling methods/Converting an integer into a double by division/.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/Calling methods/Converting an integer into a double by division/build" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/Calling methods/Converting an integer into a double by division/out" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

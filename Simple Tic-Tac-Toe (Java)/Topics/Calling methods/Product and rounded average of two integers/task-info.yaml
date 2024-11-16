@@ -1,0 +1,26 @@
+type: code
+files:
+  - name: src/Main.java
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/41041#comment
+status: Failed
+feedback:
+  message: |
+    Compilation error
+    Main.java:23: error: method product in class Main cannot be applied to given types;
+            product();
+            ^
+      required: int,int
+      found:    no arguments
+      reason: actual and formal argument lists differ in length
+    Main.java:24: error: method average in class Main cannot be applied to given types;
+            average();
+            ^
+      required: int,int
+      found:    no arguments
+      reason: actual and formal argument lists differ in length
+    2 errors
+  time: "Thu, 14 Nov 2024 19:45:14 UTC"
+record: -1
+submission_language: java17

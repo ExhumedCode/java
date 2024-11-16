@@ -1,0 +1,15 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: The destination type has the same range as the source type
+  - text: The destination type has a larger range than the source type
+  - text: The destination type has a smaller range than the source type
+  - text: The destination type can have a larger or smaller range than the source type
+files:
+  - name: src/Task.java
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/3389#comment
+status: Solved
+record: -1
+local_check: false

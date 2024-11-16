@@ -1,0 +1,11 @@
+flowchart TD
+    A[Start] --> B
+    B[/Initialize Scanner/] --> C
+    C[/Prompt for number of sides/] --> D
+    D[/Input number of sides 'n'/] --> E
+    E[/Prompt for side length/] --> F
+    F[/Input side length 's'/] --> G
+    G["Calculate area:
+    area = (n * s^2) / (4 * tan(π/n))"] --> H
+    H[/Display area with 4 decimal places/] --> I
+    I[End]
