@@ -1,0 +1,27 @@
+flowchart TD
+    Start[Start]
+    --> Init[Initialize positives = 0, negatives = 0, total = 0]
+    --> Prompt[/Enter an integer, the input ends if it is 0/]
+    --> ReadNumber[/Input number/]
+    --> CheckZero{Is number = 0?}
+
+    CheckZero --> |Yes| NoNumbers[/No numbers are entered except 0/]
+    NoNumbers --> End1[End]
+
+    CheckZero --> |No| LoopStart
+
+    LoopStart --> CheckPositive{Is number > 0?}
+
+    CheckPositive --> |Yes| IncPos[positives = positives + 1]
+    CheckPositive --> |No| IncNeg[negatives = negatives + 1]
+
+    IncPos --> AddTotal[total = total + number]
+    IncNeg --> AddTotal
+
+    AddTotal --> ReadNextNumber[/Input number/]
+    ReadNextNumber --> LoopCondition{Is number not 0?}
+
+    LoopCondition --> |Yes| LoopStart
+    LoopCondition --> |No| ComputeAvg[Compute average]
+    ComputeAvg --> DisplayResults[/Display results/]
+    DisplayResults --> End2[End]

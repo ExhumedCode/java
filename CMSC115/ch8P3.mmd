@@ -1,0 +1,41 @@
+flowchart TD
+
+    A((Start))
+    B[Display instructions]
+    C[/Input number of rows/]
+    D{Rows > 0?}
+    E[Prompt again for valid rows]
+    F[/Input number of columns/]
+    G{Columns > 0?}
+    H[Prompt again for valid columns]
+    I[/Input array elements/]
+    J[Find largest element in array]
+    K[/Display largest value and location/]
+    L((End))
+
+    A --> B
+    B --> C
+    C --> D
+    D -- No --> E
+    D -- Yes --> F
+    E --> C
+    F --> G
+    G -- No --> H
+    G -- Yes --> I
+    H --> F
+    I --> J
+    J --> K
+    K --> L
+
+    style A fill:#f0f8ff,stroke:#333,stroke-width:1px;
+    style B fill:#e6ffe6,stroke:#333,stroke-width:1px;
+    style C fill:#ffffcc,stroke:#333,stroke-width:1px;
+    style D fill:#ffe6e6,stroke:#333,stroke-width:1px;
+    style E fill:#e6e6ff,stroke:#333,stroke-width:1px;
+    style F fill:#ffffcc,stroke:#333,stroke-width:1px;
+    style G fill:#ffe6e6,stroke:#333,stroke-width:1px;
+    style H fill:#e6e6ff,stroke:#333,stroke-width:1px;
+    style I fill:#ffffcc,stroke:#333,stroke-width:1px;
+    style J fill:#e6ffe6,stroke:#333,stroke-width:1px;
+    style K fill:#ffffcc,stroke:#333,stroke-width:1px;
+    style L fill:#f0f8ff,stroke:#333,stroke-width:1px;

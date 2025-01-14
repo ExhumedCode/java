@@ -1,0 +1,28 @@
+flowchart TD
+    A([START]) --> B["Initialize Rectangle 1
+    width=4, height=40"]
+    style A fill:#f9f,stroke:#333
+    
+    B --> C["Initialize Rectangle 2
+    width=3.5, height=35.9"]
+    style B fill:#90EE90,stroke:#333
+    
+    C --> D["Calculate Rectangle 1
+    Area = width * height
+    Perimeter = 2 * (w + h)"]
+    style C fill:#90EE90,stroke:#333
+    
+    D --> E["Calculate Rectangle 2
+    Area = width * height
+    Perimeter = 2 * (w + h)"]
+    style D fill:#90EE90,stroke:#333
+    
+    E --> F[/Output Rectangle 1 Properties:<br>Width, Height, Area, Perimeter/]
+    style E fill:#90EE90,stroke:#333
+    
+    F --> G[/Output Rectangle 2 Properties:<br>Width, Height, Area, Perimeter/]
+    style F fill:#87CEEB,stroke:#333
+    
+    G --> H([END])
+    style G fill:#87CEEB,stroke:#333
+    style H fill:#f9f,stroke:#333

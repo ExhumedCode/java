@@ -1,0 +1,21 @@
+flowchart TD
+    %% Color coding:
+    %% Blue - Start/End
+    %% Orange - Input/Output
+    %% Green - Processing
+
+    A[Start]:::blue --> B[/Prompt for milliseconds/]:::orange
+    B --> C[/Get user input/]:::orange
+    C --> D[Call convertMillis method]:::green
+    D --> E[Calculate totalSeconds = millis / 1000]:::green
+    E --> F[Calculate seconds = totalSeconds % 60]:::green
+    F --> G[Calculate totalMinutes = totalSeconds / 60]:::green
+    G --> H[Calculate minutes = totalMinutes % 60]:::green
+    H --> I[Calculate hours = totalMinutes / 60]:::green
+    I --> J[Format time string hours:minutes:seconds]:::green
+    J --> K[/Display formatted time/]:::orange
+    K --> L[End]:::blue
+
+    classDef blue fill:#2374f7,stroke:#000,stroke-width:2px,color:white
+    classDef orange fill:#ff9900,stroke:#000,stroke-width:2px,color:white
+    classDef green fill:#47d147,stroke:#000,stroke-width:2px,color:white

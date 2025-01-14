@@ -1,0 +1,35 @@
+flowchart TD
+    Start[Start]
+    --> PromptInput[/Enter the first 12 digits of an ISBN number as a string:/]
+    --> ReadInput[/Input isbn as string/]
+    --> ValidateInput{"Is length 12 AND all digits?"}
+    
+    ValidateInput -- No --> InvalidInput[/"isbn + ' is an invalid input'"/]
+    InvalidInput --> End
+
+    ValidateInput -- Yes --> InitSum["sum = 0"]
+    InitSum --> ForLoopStart["i = 0"]
+
+    ForLoopStart --> LoopCondition{"Is i < 12?"}
+    
+    LoopCondition -- No --> CalculateChecksum["checksum = 10 - (sum % 10)"]
+    CalculateChecksum --> CheckChecksum{"Is checksum == 10?"}
+    
+    CheckChecksum -- Yes --> SetChecksumZero["checksum = 0"]
+    CheckChecksum -- No --> SkipSetChecksumZero["skip"]
+    
+    SetChecksumZero --> DisplayResult[/"The ISBN-13 number is " + isbn + checksum/]
+    SkipSetChecksumZero --> DisplayResult
+    
+    DisplayResult --> End[End]
+
+    LoopCondition -- Yes --> GetDigit["digit = parseInt(isbn.charAt(i))"]
+    GetDigit --> PositionCheck{"Is (i + 1) % 2 == 0?"}
+    
+    PositionCheck -- Yes --> MultiplyByThree["sum = sum + (digit * 3)"]
+    PositionCheck -- No --> AddDigit["sum = sum + digit"]
+    
+    MultiplyByThree --> IncrementI["i = i + 1"]
+    AddDigit --> IncrementI
+
+    IncrementI --> LoopCondition

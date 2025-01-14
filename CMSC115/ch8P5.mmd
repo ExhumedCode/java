@@ -1,0 +1,42 @@
+flowchart TD
+
+    %% Nodes
+    A((Start))
+    B[Display introduction and instructions]
+    C[/Input number of cities/]
+    D{Number of cities >= 2?}
+    E[Prompt again for valid city count]
+    F[/Input city coordinates with validation/]
+    G[Calculate total distance for each city]
+    H{Is this city shortest so far?}
+    I[Update central city and shortest distance]
+    J[/Display central city and total distance/]
+    K((End))
+
+    %% Edges
+    A --> B
+    B --> C
+    C --> D
+    D -- No --> E
+    E --> C
+    D -- Yes --> F
+    F --> G
+    G --> H
+    H -- Yes --> I
+    H -- No --> G
+    I --> G
+    G -->|All cities checked| J
+    J --> K
+
+    %% Styling
+    style A fill:#f0f8ff,stroke:#333,stroke-width:1px;
+    style B fill:#e6ffe6,stroke:#333,stroke-width:1px;
+    style C fill:#ffffcc,stroke:#333,stroke-width:1px;
+    style D fill:#ffe6e6,stroke:#333,stroke-width:1px;
+    style E fill:#e6e6ff,stroke:#333,stroke-width:1px;
+    style F fill:#ffffcc,stroke:#333,stroke-width:1px;
+    style G fill:#e6ffe6,stroke:#333,stroke-width:1px;
+    style H fill:#ffe6e6,stroke:#333,stroke-width:1px;
+    style I fill:#e6e6ff,stroke:#333,stroke-width:1px;
+    style J fill:#ffffcc,stroke:#333,stroke-width:1px;
+    style K fill:#f0f8ff,stroke:#333,stroke-width:1px;

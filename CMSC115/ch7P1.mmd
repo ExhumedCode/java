@@ -1,0 +1,80 @@
+flowchart TD
+    %% Node Definitions
+    Start([Start])
+    InputNumStudents[/Enter number of students/]
+    CreateArray[Create array to store scores]
+    PromptScores[/Enter all student scores/]
+    InitI[Set i = 0]
+    CheckI{Is i less than numStudents?}
+    GetScore[/Get score from user and store in array i/]
+    IncrementI[Increment i]
+    SetBest[Set best score to first score in array]
+    InitI2[Set i = 1]
+    CheckI2{Is i less than numStudents?}
+    CompareBest{Is scores i greater than best?}
+    UpdateBest[Set best equals scores i]
+    IncrementI2[Increment i]
+    InitI3[Set i = 0]
+    CheckI3{Is i less than numStudents?}
+    CheckGradeA{Is scores i greater or equal to best minus 10?}
+    SetGradeA[Assign grade equals 'A']
+    CheckGradeB{Is scores i greater or equal to best minus 20?}
+    SetGradeB[Assign grade equals 'B']
+    CheckGradeC{Is scores i greater or equal to best minus 30?}
+    SetGradeC[Assign grade equals 'C']
+    CheckGradeD{Is scores i greater or equal to best minus 40?}
+    SetGradeD[Assign grade equals 'D']
+    SetGradeF[Assign grade equals 'F']
+    DisplayResult[/Display student number, score, and grade/]
+    IncrementI3[Increment i]
+    CloseScanner[Close input scanner]
+    End([End])
+
+    %% Flow Connections
+    Start --> InputNumStudents
+    InputNumStudents --> CreateArray
+    CreateArray --> PromptScores
+    PromptScores --> InitI
+    InitI --> CheckI
+    CheckI -->|Yes| GetScore
+    GetScore --> IncrementI
+    IncrementI --> CheckI
+    CheckI -->|No| SetBest
+    SetBest --> InitI2
+    InitI2 --> CheckI2
+    CheckI2 -->|Yes| CompareBest
+    CompareBest -->|Yes| UpdateBest
+    CompareBest -->|No| IncrementI2
+    UpdateBest --> IncrementI2
+    IncrementI2 --> CheckI2
+    CheckI2 -->|No| InitI3
+    InitI3 --> CheckI3
+    CheckI3 -->|Yes| CheckGradeA
+    CheckGradeA -->|Yes| SetGradeA
+    CheckGradeA -->|No| CheckGradeB
+    CheckGradeB -->|Yes| SetGradeB
+    CheckGradeB -->|No| CheckGradeC
+    CheckGradeC -->|Yes| SetGradeC
+    CheckGradeC -->|No| CheckGradeD
+    CheckGradeD -->|Yes| SetGradeD
+    CheckGradeD -->|No| SetGradeF
+    SetGradeA --> DisplayResult
+    SetGradeB --> DisplayResult
+    SetGradeC --> DisplayResult
+    SetGradeD --> DisplayResult
+    SetGradeF --> DisplayResult
+    DisplayResult --> IncrementI3
+    IncrementI3 --> CheckI3
+    CheckI3 -->|No| CloseScanner
+    CloseScanner --> End
+
+    %% Styling
+    classDef startEnd fill:#90EE90,stroke:#333,stroke-width:1px
+    classDef process fill:#ADD8E6,stroke:#333,stroke-width:1px
+    classDef decision fill:#FFA500,stroke:#333,stroke-width:1px
+    classDef inputOutput fill:#FFFF99,stroke:#333,stroke-width:1px
+
+    class Start,End startEnd
+    class CreateArray,SetBest,UpdateBest,InitI,InitI2,InitI3,IncrementI,IncrementI2,IncrementI3,SetGradeA,SetGradeB,SetGradeC,SetGradeD,SetGradeF,CloseScanner process
+    class CheckI,CheckI2,CheckI3,CompareBest,CheckGradeA,CheckGradeB,CheckGradeC,CheckGradeD decision
+    class InputNumStudents,PromptScores,GetScore,DisplayResult inputOutput

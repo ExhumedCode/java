@@ -1,0 +1,25 @@
+flowchart TD
+    style A fill:#90EE90
+    style B fill:#FFB6C1
+    style C fill:#FFB6C1
+    style D fill:#ADD8E6
+    style E fill:#FFB6C1
+    style F fill:#ADD8E6
+    style G fill:#FFF176
+    style H fill:#ADD8E6
+    style I fill:#FFF176
+    style J fill:#FFB6C1
+    style K fill:#FF9933
+
+    A([Start]) --> B[/Input rows and columns/]
+    B --> C[/Input array elements/]
+    C --> D[Initialize array]
+    D --> E[/Set initial max as first element/]
+    E --> F[Check next element]
+    F --> G{Is element > current max?}
+    G -->|Yes| H[Update max value and location]
+    G -->|No| I{More elements?}
+    H --> I
+    I -->|Yes| F
+    I -->|No| J[/Display largest value and its location/]
+    J --> K([End])
