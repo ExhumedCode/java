@@ -1,0 +1,43 @@
+classDiagram
+    direction TB
+    
+    Project2 ..> "1" Student : uses
+    Project2 ..> "0..*" Graduate : uses
+    Project2 ..> "0..*" Undergraduate : uses
+    Student <|-- Graduate : extends
+    Student <|-- Undergraduate : extends
+    
+    class Project2 {
+        -static final String INPUT_FILE
+        -static final double MAX_GPA
+        +main(String[] args) void
+    }
+    
+    class Student {
+        -String name
+        -int creditHours
+        -double qualityPoints
+        -static double gpaThreshold
+        -static final double MAX_GPA
+        +Student(String name, int creditHours, double qualityPoints)
+        +double gpa()
+        +boolean eligibleForHonorSociety()
+        +String toString()
+        +String getName()
+        +static void setGpaThreshold(double threshold)
+    }
+
+    class Graduate {
+        -String degreeType
+        +Graduate(String name, int creditHours, double qualityPoints, String degreeType)
+        +boolean eligibleForHonorSociety()
+        +String toString()
+    }
+
+    class Undergraduate {
+        -Year year
+        +enum Year
+        +Undergraduate(String name, int creditHours, double qualityPoints, Year year)
+        +boolean eligibleForHonorSociety()
+        +String toString()
+    }

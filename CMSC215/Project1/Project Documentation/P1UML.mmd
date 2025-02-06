@@ -1,0 +1,35 @@
+classDiagram
+    class Height {
+        -INCHES_PER_FOOT : int
+        -feet : int
+        -inches : int
+        +Height(feet: int, inches: int)
+        +toInches() int
+        +toString() String
+    }
+    
+    class Player {
+        -name : String
+        -height : Height
+        -weight : double
+        +Player(name: String, height: Height, weight: double)
+        +getName() String
+        +getHeight() Height
+        +getWeight() double
+        +toString() String
+    }
+    
+    class Player1 {
+        -players : ArrayList~Player~
+        +Player1()
+        +inputPlayers() void
+        +displayPlayers() void
+    }
+    
+    class Main {
+        +main(args: String[]) void
+    }
+
+    Player "1" *-- "1" Height : Composition
+    Player1 "1" o-- "0..*" Player : Aggregation
+    Main ..> Player1 : Dependency

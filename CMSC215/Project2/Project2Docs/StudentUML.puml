@@ -1,0 +1,45 @@
+@startuml
+skinparam classAttributeIconSize 0
+hide circle
+
+Project2 "1" ..> "1" Student : uses
+Project2 "1" ..> "0..*" Graduate : uses
+Project2 "1" ..> "0..*" Undergraduate : uses
+
+class Project2 {
+    + {static} main(String[] args): void
+}
+
+class Student {
+    - String name
+    - int creditHours
+    - double qualityPoints
+    - {static} double gpaThreshold
+    - {static} final double MAX_GPA
+    + Student(String name, int creditHours, double qualityPoints)
+    + double gpa()
+    + boolean eligibleForHonorSociety()
+    + String toString()
+    + String getName()
+    + {static} void setGpaThreshold(double threshold)
+}
+
+class Graduate {
+    - String degreeType
+    + Graduate(String name, int creditHours, double qualityPoints, String degreeType)
+    + boolean eligibleForHonorSociety()
+    + String toString()
+}
+
+class Undergraduate {
+    - Year year
+    + enum Year
+    + Undergraduate(String name, int creditHours, double qualityPoints, Year year)
+    + boolean eligibleForHonorSociety()
+    + String toString()
+}
+
+Student <|-- Graduate : extends
+Student <|-- Undergraduate : extends
+
+@enduml

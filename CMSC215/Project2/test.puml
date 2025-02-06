@@ -1,0 +1,7 @@
+@startuml
+class Student
+class Graduate
+class Undergraduate
+Student <|-- Graduate
+Student <|-- Undergraduate
+@enduml
