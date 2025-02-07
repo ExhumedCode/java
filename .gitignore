@@ -1,3 +1,6 @@
 /.metadata/
 /Hyperskill/Practice/ForLoop/target/
 .DS_Store
+*.iml
+out/
+plantuml.jar
