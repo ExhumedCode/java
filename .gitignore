@@ -1,6 +1,22 @@
-/.metadata/
-/Hyperskill/Practice/ForLoop/target/
-.DS_Store
-*.iml
+# Compiled files
+*.class
 out/
-plantuml.jar
+build/
+bin/
+
+# IDE specific files (though IntelliJ manages .idea/ separately)
+*.iml
+*.iws
+*.ipr
+
+# Package Files
+*.jar
+*.war
+*.ear
+
+# OS specific
+.DS_Store
+Thumbs.db
+
+# Debug files
+hs_err_pid*
