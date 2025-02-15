@@ -6,6 +6,13 @@ files:
   - name: test/ZookeeperTest.java
     visible: false
     learner_created: false
+  - name: bin/main/Zookeeper-with-Java/src/main/java/Main.class
+    visible: true
+    is_binary: true
+    learner_created: true
+  - name: src/Zookeeper-with-Java/src/main/java/Main.java
+    visible: true
+    learner_created: true
 feedback_link: https://hyperskill.org/learn/step/17791#comment
 status: Solved
 feedback:

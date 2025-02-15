@@ -1,32 +1,14 @@
-# IDE specific files
-.idea/
-.metadata/
-*.iml
-*.iws
-*.ipr
-
-# Eclipse specific
-.settings/
-.classpath
-.project
-
-# Gradle specific
-.gradle/
-gradle/
-build/
-gradlew
-gradlew.bat
-
 # Compiled files
 *.class
 out/
 build/
 bin/
 
-# Package Files
-*.jar
-*.war
-*.ear
+# IDE specific files
+.idea/
+*.iml
+*.iws
+*.ipr
 
 # OS specific
 .DS_Store
