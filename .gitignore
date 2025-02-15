@@ -1,13 +1,27 @@
+# IDE specific files
+.idea/
+.metadata/
+*.iml
+*.iws
+*.ipr
+
+# Eclipse specific
+.settings/
+.classpath
+.project
+
+# Gradle specific
+.gradle/
+gradle/
+build/
+gradlew
+gradlew.bat
+
 # Compiled files
 *.class
 out/
 build/
 bin/
-
-# IDE specific files (though IntelliJ manages .idea/ separately)
-*.iml
-*.iws
-*.ipr
 
 # Package Files
 *.jar
